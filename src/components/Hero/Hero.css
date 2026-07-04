@@ -1,0 +1,164 @@
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 68px;
+  background:
+    radial-gradient(ellipse 80% 60% at 60% 40%, rgba(37,99,235,0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 30% 70%, rgba(6,182,212,0.08) 0%, transparent 60%),
+    var(--bg-primary);
+  overflow: hidden;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4rem;
+  align-items: center;
+}
+.hero-greeting {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--blue-400);
+  margin-bottom: 1.25rem;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid rgba(59,130,246,0.3);
+  border-radius: 100px;
+  background: rgba(59,130,246,0.06);
+  animation: fadeInDown 0.8s ease forwards;
+}
+.dot {
+  width: 7px; height: 7px;
+  background: var(--cyan-400);
+  border-radius: 50%;
+  animation: dotPulse 2s ease infinite;
+  display: inline-block;
+}
+@keyframes dotPulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
+@keyframes fadeInDown { from{opacity:0;transform:translateY(-20px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeInUp   { from{opacity:0;transform:translateY(30px)}  to{opacity:1;transform:translateY(0)} }
+
+.hero-name {
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.05;
+  color: var(--text-primary);
+  animation: fadeInUp 0.8s 0.2s ease both;
+}
+.hero-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  animation: fadeInUp 0.8s 0.35s ease both;
+}
+.title-text {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 500;
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.typed-cursor {
+  display: inline-block;
+  width: 2px; height: 1.2em;
+  background: var(--blue-400);
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+.hero-tagline {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cyan-400);
+  letter-spacing: 0.5px;
+  margin-bottom: 1.25rem;
+  animation: fadeInUp 0.8s 0.45s ease both;
+}
+.hero-intro {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 560px;
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 0.8s 0.55s ease both;
+}
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s 0.65s ease both;
+}
+
+/* Avatar */
+.hero-avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+  animation: fadeInUp 0.8s 0.3s ease both;
+}
+.hero-avatar-ring {
+  width: 260px; height: 260px;
+  border-radius: 50%;
+  background: var(--grad-primary);
+  padding: 3px;
+  animation: floatAvatar 5s ease-in-out infinite;
+  box-shadow: 0 0 60px rgba(59,130,246,0.3);
+}
+@keyframes floatAvatar {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-16px); }
+}
+.hero-avatar-inner {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-avatar-initials {
+  font-size: 4rem;
+  font-weight: 800;
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+.hero-badge {
+  position: absolute;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 100px;
+  padding: 0.45rem 0.875rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  box-shadow: var(--shadow-card);
+  animation: floatBadge 6s ease-in-out infinite;
+}
+.hero-badge i { color: var(--blue-400); margin-right: 4px; }
+.hero-badge-1 { bottom: 10px;  left: -30px;  animation-delay: 0s;   }
+.hero-badge-2 { top: 20px;    right: -20px; animation-delay: 1.5s; }
+.hero-badge-3 { bottom: 60px; right: -35px; animation-delay: 3s;   }
+@keyframes floatBadge {
+  0%,100% { transform: translateY(0) rotate(-1deg); }
+  50%      { transform: translateY(-10px) rotate(1deg); }
+}
+
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; text-align: center; }
+  .hero-avatar-wrap { display: none; }
+  .hero-intro { max-width: 100%; }
+  .hero-cta { justify-content: center; }
+}
+@media (max-width: 640px) {
+  .hero-name { letter-spacing: -1px; }
+}

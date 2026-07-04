@@ -1,0 +1,48 @@
+export const experiences = [
+  {
+    id: "Elevate Labs",
+    icon: "fas fa-laptop-code",
+    role: "Data Analyst Intern",
+    company: "Elevate Labs",
+    start_date: "Feb 2026",
+    end_date: "May 2026",
+    setup: true,
+    responsibilities: [
+      "During this journey, I worked on real-world datasets and gained hands-on experience in data cleaning, data analysis, and reporting using Excel, SQL, and Power BI.",
+      "This experience strengthened my ability to transform raw data into meaningful insights that support better decision-making.",
+      "I’m also honored to be recognized as a Best Performer, which motivates me to keep learning and growing in the field of Data Analytics.",
+    ],
+    tech: [
+      "Power BI",
+      "SQL",
+      "Python",
+      "EDA",
+      "Data analysis",
+      "Data Visualization",
+      "Excel",
+    ],
+  },
+  {
+    id: "Techmicra",
+    icon: "fas fa-laptop-code",
+    role: "Frontend Developer Intern",
+    company: "Techmicra IT Solutions",
+    start_date: "Jan 2025",
+    end_date: "Apr 2025",
+    setup: true,
+    responsibilities: [
+      "Developed a responsive React-based fitness platform with real-time activity tracking features, providing users with live data feedback on their workouts.",
+      "Integrated Firebase authentication for secure user sign-in and sign-up flows, improving platform security and user experience.",
+      "Optimized the UI for better engagement by refining layouts, improving interaction states, and conducting usability improvements.",
+      "Implemented reusable component architecture to improve code maintainability, development velocity, and overall performance.",
+    ],
+    tech: [
+      "React.js",
+      "Bootstrap",
+      "JavaScript",
+      "HTML5/CSS3",
+      "Tailwind CSS",
+      "UI/UX Design",
+    ],
+  },
+];
